@@ -11,7 +11,7 @@ Extensão para o Zotero que permite personalizar a cor e o ícone das coleções
 ## ✨ Recursos
 
 - 🎨 14 cores prontas e uma cor personalizada
-- 🗂️ 72 ícones organizados por área: Geral, Saúde, Ciências, Tecnologia, Humanidades e Sociais, Artes e Linguagens
+- 🗂️ 136 ícones organizados por área: Geral, Educação, Saúde, Ciências, Tecnologia, Humanidades e Sociais, Artes e Linguagens
 - 📚 Aplicação em várias coleções de uma só vez
 - 🔄 Atualização automática pelo próprio Zotero
 - 🌐 Interface em português, inglês, espanhol, francês, alemão, italiano e chinês

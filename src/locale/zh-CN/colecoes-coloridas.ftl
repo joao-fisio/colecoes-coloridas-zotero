@@ -8,6 +8,7 @@ colecoes-coloridas-custom =
     .title = 自定义颜色…
 colecoes-coloridas-reset = 恢复默认
 colecoes-coloridas-general = 常规
+colecoes-coloridas-education = 教育
 colecoes-coloridas-health = 健康
 colecoes-coloridas-science = 科学
 colecoes-coloridas-technology = 技术

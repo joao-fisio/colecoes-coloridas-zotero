@@ -8,6 +8,7 @@ colecoes-coloridas-custom =
     .title = Color personalizado…
 colecoes-coloridas-reset = Restablecer
 colecoes-coloridas-general = General
+colecoes-coloridas-education = Educación
 colecoes-coloridas-health = Salud
 colecoes-coloridas-science = Ciencias
 colecoes-coloridas-technology = Tecnología

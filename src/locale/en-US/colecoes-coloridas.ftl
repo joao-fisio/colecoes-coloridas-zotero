@@ -8,6 +8,7 @@ colecoes-coloridas-custom =
     .title = Custom color…
 colecoes-coloridas-reset = Reset to default
 colecoes-coloridas-general = General
+colecoes-coloridas-education = Education
 colecoes-coloridas-health = Health
 colecoes-coloridas-science = Sciences
 colecoes-coloridas-technology = Technology

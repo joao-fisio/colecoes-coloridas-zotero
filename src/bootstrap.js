@@ -13,12 +13,20 @@ const ICONS = {
 	general: ['', 'folder-open', 'book', 'library', 'publications', 'note', 'page', 'abstract',
 		'attachment', 'annotation', 'cite', 'tag', 'pin', 'link', 'globe', 'location',
 		'magnifier', 'group', 'info', 'report', 'edit', 'tick', 'related', 'feed'],
-	health: ['stethoscope', 'heartbeat', 'brain', 'bone', 'lungs', 'dental', 'eye', 'physotherapist',
-		'stretching', 'wheelchair', 'run', 'apple', 'pill', 'vaccine', 'virus', 'baby-carriage'],
-	science: ['microscope', 'flask', 'dna', 'atom', 'plant-2', 'paw', 'planet', 'math-function'],
-	technology: ['code', 'cpu', 'device-laptop', 'database', 'cloud', 'robot', 'network', 'tool'],
-	humanities: ['school', 'scale', 'chart-line', 'users-group', 'map', 'hourglass', 'message-circle', 'mood-smile'],
-	arts: ['palette', 'music', 'movie', 'camera', 'language', 'feather', 'masks-theater', 'building-arch'],
+	education: ['school', 'certificate', 'books', 'notebook', 'presentation', 'chalkboard', 'backpack', 'pencil',
+		'ruler-2', 'abc', 'bulb', 'clipboard-list', 'list-check', 'calendar', 'clock', 'award'],
+	health: ['stethoscope', 'heartbeat', 'brain', 'bone', 'lungs', 'dental', 'eye', 'ear',
+		'physotherapist', 'stretching', 'massage', 'yoga', 'wheelchair', 'run', 'apple', 'baby-carriage',
+		'pill', 'vaccine', 'virus', 'droplet', 'thermometer', 'first-aid-kit', 'nurse', 'building-hospital'],
+	science: ['microscope', 'flask', 'test-pipe', 'dna', 'atom', 'magnet', 'wave-sine', 'math-function',
+		'chart-dots', 'telescope', 'planet', 'mountain', 'plant-2', 'leaf', 'butterfly', 'paw'],
+	technology: ['code', 'braces', 'terminal-2', 'file-code', 'bug', 'git-branch', 'git-merge', 'api',
+		'binary-tree', 'database', 'server', 'cloud', 'network', 'sitemap', 'world-www', 'wifi',
+		'cpu', 'device-laptop', 'device-mobile', 'robot', 'sparkles', 'shield-lock', 'settings', 'tool'],
+	humanities: ['scale', 'gavel', 'coin', 'chart-line', 'briefcase', 'users-group', 'heart-handshake', 'building-community',
+		'mood-smile', 'message-circle', 'speakerphone', 'news', 'map', 'world', 'flag', 'hourglass'],
+	arts: ['palette', 'brush', 'color-swatch', 'photo', 'camera', 'movie', 'music', 'headphones',
+		'microphone-2', 'vinyl', 'masks-theater', 'feather', 'writing', 'typography', 'language', 'building-arch'],
 };
 const KNOWN = new Set(Object.values(ICONS).flat());
 const SVG = name => `url(${BASE}icons/${KNOWN.has(name) && name || 'folder'}.svg)`;
@@ -28,7 +36,7 @@ const CSS = `
 .cc h3 { margin: 0; font-size: inherit; font-weight: 600; }
 .cc h4 { margin: 8px 0 4px; font-size: inherit; font-weight: normal; opacity: .7; }
 .cc h4:first-child { margin-top: 0; }
-.cc .icons { max-height: 200px; overflow-y: auto; scrollbar-width: thin; margin: -3px; padding: 3px; }
+.cc .icons { max-height: 240px; overflow-y: auto; scrollbar-width: thin; margin: -3px; padding: 3px; }
 .cc .grid { display: grid; grid-template-columns: repeat(8, 24px); gap: 6px; }
 .cc .grid > * { appearance: none; box-sizing: border-box; width: 24px; height: 24px; margin: 0; padding: 0;
 	border: 0; border-radius: 6px; background: center / 16px no-repeat; cursor: pointer; }
@@ -159,11 +167,13 @@ function openPanel(win, targets) {
 		// Mostra a categoria do ícone atual (título + ícones)
 		panel.querySelector('.ic[aria-pressed="true"]')?.parentNode.previousSibling.scrollIntoView({ block: 'start' });
 	}, { once: true });
-	// Ancorado na árvore (estável), pois as linhas são recriadas a cada atualização
+	// Ancorado na linha (o elemento é reaproveitado a cada atualização; só o conteúdo muda),
+	// abrindo abaixo dela ou, se não couber, acima
 	let tree = doc.getElementById('zotero-collections-tree');
-	let t = tree.getBoundingClientRect();
-	let r = tree.querySelector('.row.focused, .row.selected')?.querySelector('.cell-icon')?.getBoundingClientRect() || t;
-	panel.openPopup(tree, 'overlap', r.left - t.left, r.bottom - t.top + 4);
+	let row = tree.querySelector('.row.focused, .row.selected');
+	let icon = row?.querySelector('.cell-icon');
+	let x = icon ? icon.getBoundingClientRect().left - row.getBoundingClientRect().left : 0;
+	panel.openPopup(row || tree, 'after_start', x, 2);
 }
 
 function buildPanel(doc) {
