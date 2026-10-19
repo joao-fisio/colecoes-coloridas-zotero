@@ -1,0 +1,15 @@
+colecoes-coloridas-menu =
+    .label = Colore e icona…
+colecoes-coloridas-color = Colore
+colecoes-coloridas-icon = Icona
+colecoes-coloridas-none =
+    .title = Nessun colore
+colecoes-coloridas-custom =
+    .title = Colore personalizzato…
+colecoes-coloridas-reset = Ripristina
+colecoes-coloridas-general = Generale
+colecoes-coloridas-health = Salute
+colecoes-coloridas-science = Scienze
+colecoes-coloridas-technology = Tecnologia
+colecoes-coloridas-humanities = Scienze umane e sociali
+colecoes-coloridas-arts = Arti e lingue

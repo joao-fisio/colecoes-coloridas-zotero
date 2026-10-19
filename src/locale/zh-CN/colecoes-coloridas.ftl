@@ -1,0 +1,15 @@
+colecoes-coloridas-menu =
+    .label = 颜色和图标…
+colecoes-coloridas-color = 颜色
+colecoes-coloridas-icon = 图标
+colecoes-coloridas-none =
+    .title = 无颜色
+colecoes-coloridas-custom =
+    .title = 自定义颜色…
+colecoes-coloridas-reset = 恢复默认
+colecoes-coloridas-general = 常规
+colecoes-coloridas-health = 健康
+colecoes-coloridas-science = 科学
+colecoes-coloridas-technology = 技术
+colecoes-coloridas-humanities = 人文社科
+colecoes-coloridas-arts = 艺术与语言

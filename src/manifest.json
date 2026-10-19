@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Coleções Coloridas Zotero",
+  "version": "1.0.0",
+  "description": "Personalize a cor e o ícone das suas coleções.",
+  "author": "João Pedro Conceição",
+  "homepage_url": "https://github.com/joao-fisio/colecoes-coloridas-zotero",
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
+  "applications": {
+    "zotero": {
+      "id": "colecoes-coloridas-zotero@joao-fisio",
+      "update_url": "https://raw.githubusercontent.com/joao-fisio/colecoes-coloridas-zotero/main/updates.json",
+      "strict_min_version": "6.999",
+      "strict_max_version": "11.*"
+    }
+  }
+}
