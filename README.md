@@ -1,3 +1,5 @@
+![Capa do projeto](images/arte_colecoes_coloridas_zotero.png)
+
 # 🎨 Coleções Coloridas Zotero
 
 Extensão para o Zotero que permite personalizar a cor e o ícone das coleções.
